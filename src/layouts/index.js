@@ -16,6 +16,12 @@ export default ({ children, data }) =>
                 { name: 'description', content: 'Sample' },
                 { name: 'keywords', content: 'sample, something' },
             ]}
+            link={[
+                { rel: 'stylesheet', href: 'http://github-profile.com/dist/gh-profile-card.min.css'}
+            ]}
+            script={[
+                { type: 'text/javascript', src: "http://github-profile.com/dist/gh-profile-card.min.js"}
+            ]}
         />
         <g.Div
             margin={`0 auto`}
