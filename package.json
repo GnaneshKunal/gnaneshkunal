@@ -17,9 +17,10 @@
     "gatsby-plugin-glamor": "^1.6.8",
     "gatsby-plugin-react-helmet": "^2.0.1",
     "gatsby-plugin-typography": "^1.7.10",
-    "gatsby-remark-prismjs": "^1.2.9",
+    "gatsby-remark-katex": "^1.0.10",
+    "gatsby-remark-prismjs": "^1.2.12",
     "gatsby-source-filesystem": "^1.5.8",
-    "gatsby-transformer-remark": "^1.7.21",
+    "gatsby-transformer-remark": "^1.7.30",
     "glamorous": "^4.11.0",
     "react-helmet": "^5.2.0",
     "typography-theme-kirkham": "^0.16.3"

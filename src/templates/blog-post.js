@@ -1,6 +1,7 @@
 
 
 import * as React from "react";
+require(`katex/dist/katex.min.css`)
 
 export default ({ data }) => {
   const post = data.markdownRemark
