@@ -25,7 +25,7 @@ export default ({ children, data }) =>
         />
         <g.Div
             margin={`0 auto`}
-            maxWidth={700}
+            maxWidth={800}
             padding={rhythm(2)}
             paddingTop={rhythm(1.5)}
         >
