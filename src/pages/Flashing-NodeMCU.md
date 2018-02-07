@@ -166,6 +166,11 @@ tmr.alarm(0, duration, 1, toggleLED)
 ```
 3. Save the file as `init.lua`.
 
+<div align="center">
+    <br />
+  <img src="https://www.dropbox.com/s/up09cce4wxpy65n/node-mcu3.png?raw=1">
+</div>
+
 4. Now the blue onboard LED should blink on and off every second. If you restart the device, it will load the init.lua file and keep on blinking.
 
 <div align="center">
