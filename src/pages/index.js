@@ -9,7 +9,7 @@ export default ({ data }) => {
     <div>
       <g.H1 display={"inline-block"} >
       {/* borderBottom={"1px solid"} */}
-      <code style={{ fontSize: '22px' }}>[gnanesh@blog ~]$ cat /var/log/weblogs </code>
+      <code style={{ fontSize: '22px' }}>[gnanesh@monster ~]$ cat /var/log/weblogs </code>
       </g.H1>
       <h4>
         {data.allMarkdownRemark.totalCount} Posts
