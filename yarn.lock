@@ -8260,9 +8260,9 @@ term-size@^1.2.0:
   dependencies:
     execa "^0.7.0"
 
-terminal-in-react@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/terminal-in-react/-/terminal-in-react-4.0.0.tgz#52ae4142fe1f645aa478ad3cf2aefb1fd52cdf83"
+terminal-in-react@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/terminal-in-react/-/terminal-in-react-4.2.1.tgz#081b9d67322d6b47a48b4a457ceceb4b4d1a5ecd"
   dependencies:
     lodash.camelcase "^4.3.0"
     lodash.isequal "^4.5.0"
