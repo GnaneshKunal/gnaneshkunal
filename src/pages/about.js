@@ -1,19 +1,20 @@
 import React, {Component } from "react";
 import Terminal from 'terminal-in-react';
-// import { Scrollbars } from 'react-custom-scrollbars';
 import { css } from 'glamor';
 
 const hideScrollbar = css({ 'overflow': !'hidden' });
 
 class AboutPage extends Component {
+
+    componentDidMount() {
+        const Element = document.getElementsByClassName("terminal-base")[0].firstChild.firstChild
+        Element.style.overflowX = "hidden"
+    }
+
     showMsg = m => m
     render() {
       return (
         <div>
-        {/* <Scrollbars
-        autoHeight
-        autoHeightMin={100}
-        autoHeightMax={200}> */}
             <center>
             <Terminal
             descriptions={{
@@ -31,7 +32,6 @@ class AboutPage extends Component {
             prompt="black"
             style={{ 
                 fontWeight: "bold", fontSize: "1em",
-                overflowX: 'hidden', overflow: 'hidden'
             }}
             commands={{
                 'hostname': () => this.showMsg('monster'),
@@ -47,7 +47,6 @@ class AboutPage extends Component {
             showActions={false}
             />
             </center>
-        {/* </Scrollbars> */}
         </div>
       );
     }
@@ -85,7 +84,7 @@ class AboutPage extends Component {
                   Socket Chat and Game Server.
               Feb 2017 - May 2017
       https://github.com/GnaneshKunal/node-chat-xo
-  Node.js TCP CHAT &amp;&amp; TIC-TAC-TOE game Server
+  Node.js TCP CHAT && TIC-TAC-TOE game Server
   
                   Checkout Logger
               Feb 2017 - May 2017
@@ -104,6 +103,7 @@ class AboutPage extends Component {
               Big Data (Due)
               Machine Learnig
               Cryptography
+              Deep Learning (ongoing)
   `;  
 
   export const query = graphql`
