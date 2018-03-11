@@ -6,15 +6,16 @@ require('prismjs/themes/prism-solarizedlight.css');
 import { rhythm } from "../utils/typography";
 import Helmet from 'react-helmet'
 
-const linkStyle = css({ float: `right` });
+const linkStyle = css({ float: `right`, color: 'black', paddingLeft: '20px', textDecoration: 'none' });
 
 export default ({ children, data }) =>
     <div>
         <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-                { name: 'description', content: 'Sample' },
-                { name: 'keywords', content: 'sample, something' },
+                { name: 'description', content: "Gnanesh Kunal's personal website and blog." },
+                { name: 'keywords', content: 'blog programming student resume technology' },
+                { name: 'author', content: 'Gnanesh Kunal' }
             ]}
             link={[
                 { rel: 'stylesheet', href: 'http://github-profile.com/dist/gh-profile-card.min.css'}
@@ -37,10 +38,10 @@ export default ({ children, data }) =>
             >
                 {data.site.siteMetadata.title}
             </g.H3>
-            </Link>
-            <Link className={linkStyle} to={`/about/`}>
-            About
-            </Link>
+    </Link>
+    <Link className={linkStyle} to={`/about/`}>About</Link>
+    <Link className={linkStyle} to={`/resume`}>Resume</Link>
+    <Link className={linkStyle} to={`/projects/`}>Projects</Link>
             {children()}
         </g.Div>
     </div>;
