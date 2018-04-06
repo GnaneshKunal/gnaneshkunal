@@ -9,9 +9,9 @@ date: "2018-04-06"
     <img src="https://www.dropbox.com/s/agb73ch2afnuy2r/transfer_learning.jpg?raw=1"><br /><br />
 </div>
 
-Recently I've wrote a Classifier that is able to distinguish dogs from cats. 
+Recently I've written a Classifier that is able to distinguish dogs from cats. 
 
-Things I've learnt:
+Things I've learned:
 0. How to use a Pretrained Model
 1. Apply Transfer Learning 
 
@@ -19,7 +19,7 @@ Things I've learnt:
 
 I've trained the model using Kaggle's classic dogs vs. cats dataset. The dataset can be found [here](https://www.kaggle.com/c/dogs-vs-cats/data)
 
-Well, I have to say it's not plug and play. Atleast not for the `torchvision` APIs. `torchvision` has a `ImageFolder` thats (right now) the standard to load images as well as it's labels automatically. The document suggests that `ImageFolder` requires the dataset in the following format:
+Well, I have to say it's not plug and play. At least not for the `torchvision` APIs. `torchvision` has an `ImageFolder` that's (right now) the standard to load images as well as it's labels automatically. The document suggests that `ImageFolder` requires the dataset in the following format:
 
 ```bash
 root/dog/xxx.png
@@ -56,9 +56,9 @@ With ReLu everywhere and softmax layer at the end. It worked but not as I though
 
 ## Training
 
-I've considered to train my ResNet18 for the whole dataset. But the main problem is I don't have a GPU. (ノಠ益ಠ)ノ彡┻━┻
+I've considered training my ResNet18 for the whole dataset. But the main problem is I don't have a GPU. (ノಠ益ಠ)ノ彡┻━┻
 
-So Transfer Learning is the only choice I've got. I've opted for a pretrained Model which is trained on a ImageNet. 
+So Transfer Learning is the only choice I've got. I've opted for a pretrained Model which is trained on an ImageNet. 
 
 Choices I've got:
 0. Full Pretrained Model
@@ -69,7 +69,7 @@ Choices I've got:
 I've got to tell you that using this is of no use. It just works. You don't have to do anything. You just have to write the predict function.
 
 ### Fine-Tuning the ConvNet
-Taking the whole network and retraining the parameters just looked cool and painful too. Well this one worked really good. The results were good too. It took so much time to train the model than I've thought it would take. I've trained the model but forgot to save it. I trained it another time though. But the time consumption was really too much.
+Taking the whole network and retraining the parameters just looked cool and painful too. Well, this one worked really good. The results were good too. It took so much time to train the model than I've thought it would take. I've trained the model but forgot to save it. I trained it another time though. But the time consumption was really too much.
 
 ### ConvNet as fixed feature extractor
 Taking the whole network and adding a final layer and training just the last layer with softmax has done the job. The results are as expected. And also, It takes too less time compared to Full training and Fine-Tuning the ConvNet. The results are almost equal to the Fine-Tuning technique.
