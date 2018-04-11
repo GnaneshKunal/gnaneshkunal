@@ -9,6 +9,17 @@ class ProjectsPage extends Component {
             <h1>Projects</h1>
 
 
+              <h2>Dogs vs. Cats classifier</h2>
+              A classifier that is able to distinguish cats from dogs. Transfer Learning technique is applied to a ResNet18 as a fixed feature extractor.
+			        <br />
+			        <div >
+				      <img style={{'margin': '0px'}} src="https://icons.duckduckgo.com/ip3/help.github.com.ico" height="20" width="20" />
+				      <a style={{paddingLeft: '8px', color: 'black', textDecoration: 'none'}} href="https://github.com/gnaneshkunal/dogs-vs-cats-classifier">
+					    Visit it at Github
+				  </a>
+			        </div>
+			        <br />
+
 
 			<h2>Twitter Riots</h2>
 			To analyze the twitter data of people belonging to a region using their tweets, location and using Natural Language Processing to predict any racist or opinion based riots and protests from tweets and trending hashtags.
