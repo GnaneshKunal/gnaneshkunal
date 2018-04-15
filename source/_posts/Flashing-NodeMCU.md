@@ -44,7 +44,7 @@ Steps that you must do:
 2. Test with a small Program 
 
 
-### UPDATE YOUR FIRMWARE
+#### UPDATE YOUR FIRMWARE
 
 1. Download esptool either as a zip file or using git clone.
 ```bash
@@ -88,7 +88,7 @@ Hard resetting via RTS pin...
 [monster@monster esptool]$ 
 ```
 
-### VERIFY YOUR FIRMWARE
+#### VERIFY YOUR FIRMWARE
 1. Install the CP2102 driver from [here](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
 2. Then extract the tarball and run the makefile
 ```bash
@@ -133,14 +133,10 @@ make[1]: Leaving directory '/usr/src/kernels/4.14.16-300.fc27.x86_64'
 NodeMCU 0.9.6 build 20150704 powered by Lua 5.1.4
 ```
 <div align="center">
-    <br />
   <img src="https://www.dropbox.com/s/r8cvzxhis6rafut/node-mcu2.png?raw=1">
 </div>
-and that's it.
-<br />
-<br />
 
-### FINAL PROGRAM
+#### FINAL PROGRAM
 
 #### NodeMCU uses Lua programming language, which is a cross breed of Node.js and python. When booting the device will look for a file called init.lua and executes the file.
 

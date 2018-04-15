@@ -16,7 +16,7 @@ It was a bit harder to write everything from scratch. Even the `dot product` mus
 
 Finally, I've felt comfortable and could clearly understand what is happening in the background (cause, Machine Learning is all about Math).
 
-## Implementing Stochastic Gradient Descent
+#### Implementing Stochastic Gradient Descent
 
 Stochastic gradient descent is actually scanning through the training examples, and then it'll take a little gradient descent step with respect to the cost function of just that training example.
 
@@ -29,9 +29,9 @@ $$cost( \Theta, (x^{(i)}, y^{(i)})) = \dfrac{1}{2}(h_\Theta(x^{(i)}) - y^{i})^2$
 $$J_{train}(\Theta)  = \dfrac{1}{m} \sum_{i=1}^{m} cost( \Theta, (x^{(i)}, y^{(i)}))$$
 </div>
 
-### A dumb Stochastic Gradient Descent Implementation
+##### A dumb Stochastic Gradient Descent Implementation
 
-#### Using Lists:
+###### Using Lists:
 
 ```python
 def dot(v, w):
