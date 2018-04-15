@@ -3,13 +3,9 @@ title: Applying Transfer Learning on ResNet using PyTorch
 date: "2018-04-06"
 ---
 
-<div align="center">
-    <br />
-    <br />
-    <img src="https://www.dropbox.com/s/agb73ch2afnuy2r/transfer_learning.jpg?raw=1"><br /><br />
-</div>
-
 Recently I've written a Classifier that is able to distinguish dogs from cats. 
+
+<!--more -->
 
 Things I've learned:
 0. How to use a Pretrained Model
@@ -19,7 +15,11 @@ Things I've learned:
 
 I've trained the model using Kaggle's classic dogs vs. cats dataset. The dataset can be found [here](https://www.kaggle.com/c/dogs-vs-cats/data)
 
+
+
 Well, I have to say it's not plug and play. At least not for the `torchvision` APIs. `torchvision` has an `ImageFolder` that's (right now) the standard to load images as well as it's labels automatically. The document suggests that `ImageFolder` requires the dataset in the following format:
+
+
 
 ```bash
 root/dog/xxx.png
@@ -59,6 +59,12 @@ With ReLu everywhere and softmax layer at the end. It worked but not as I though
 I've considered training my ResNet18 for the whole dataset. But the main problem is I don't have a GPU. (ノಠ益ಠ)ノ彡┻━┻
 
 So Transfer Learning is the only choice I've got. I've opted for a pretrained Model which is trained on an ImageNet. 
+
+<div align="center">
+    <br />
+    <br />
+    <img src="https://www.dropbox.com/s/agb73ch2afnuy2r/transfer_learning.jpg?raw=1"><br /><br />
+</div>
 
 Choices I've got:
 0. Full Pretrained Model

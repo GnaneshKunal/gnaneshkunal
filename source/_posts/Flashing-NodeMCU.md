@@ -3,19 +3,23 @@ title: Flashing your NodeMCU
 date: "2018-02-07"
 ---
 
-<div align="center">
-    <br />
-    <br />
-  <img src="https://www.dropbox.com/s/b91s2usliebe37w/node-mcu.png?raw=1"><br><br>
-</div>
-
 NodeMCU always comes to my mind (just like Arduino) while I think about any project related to the Internet of Things. I know, Arduino is a way better than NodeMCU. Lots of libraries, portability, and you can plug to almost all anything. 
 
 <i>Anything</i>?
 
 <i>Yes, Anything!!</i>
 
+<!-- more -->
+
 Well, the only reason I prefer NodeMCU over Arduino UNO is the inbuilt WIFI module (ESP8266) NodeMCU comes with.
+
+
+<div align="center">
+    <br />
+    <br />
+  <img src="https://www.dropbox.com/s/b91s2usliebe37w/node-mcu.png?raw=1"><br><br>
+</div>
+
 
 The ESP8266 is also available as a standalone WIFI module, which you can connect to most of the Microcontrollers.
 But most of the Microcontrollers use 5v as default compared to 3.3v of ESP9266.

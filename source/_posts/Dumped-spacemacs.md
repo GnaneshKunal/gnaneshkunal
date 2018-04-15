@@ -3,15 +3,17 @@ title: Dumped Spacemacs for Vanilla Emacs
 date: "2018-04-14"
 ---
 
-<div align="center">
-	<img height="300" width="300" src="https://www.dropbox.com/s/2le5houarieb132/emacs.png?raw=1" />
-</div>
-
 The start time for <a href="http://spacemacs.org/">Spacemacs</a> used to be pretty high. So I've tried unsetting few layers, but the problem still persists.
 
 I'd planned on dumping Spacemacs but I've started my emacs journey with Spacemacs, So learning the underlying layer of emacs was too difficult to me.
-
+<!-- more -->
 I've seen myself deleting Spacemacs, giving a try on <a href="https://www.gnu.org/software/emacs/">Vannila Emacs</a> and coming back to Spacemacs again. 
+
+
+<div align="center">
+	<img height="200" width="200" src="https://www.dropbox.com/s/2le5houarieb132/emacs.png?raw=1" />
+</div>
+
 
 Most of the times the common problems I've faced was <i><b>I can't find any packages.</b></i>
 
@@ -21,7 +23,7 @@ I've gone through the Melpa Installation steps, which was the starting point to 
 By copy pasting certain elisp commands on <i>`.emacs`</i> I've found elisp to be a lot simpler and I could clearly understand what's happening in the background as well.
 
 
-### Melpa
+#### Melpa
 Add the following in your `.emacs` and your are done.
 
 ```lisp
@@ -29,10 +31,10 @@ Add the following in your `.emacs` and your are done.
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ```
 
-### Autocomplete
+#### Autocomplete
 Autocomplete is a must. You really need it if you need some cool `auto-completition` for other languages as well.
 
-```
+```lisp
 M-x package-install [RET] auto-complete [RET]
 ```
 
@@ -42,12 +44,12 @@ M-x package-install [RET] auto-complete [RET]
 (ac-config-default)
 ```
 
-### C/C++
+#### C/C++
 
 I love clang. And you must love it too. <a href="https://github.com/Sarcasm/irony-mode">irony</a> provides better editing experience for C and  C++, and is based on `libclang`. 
 
 
-```
+```lisp
 M-x package-install [RET] irony [RET]
 ```
 
@@ -62,12 +64,12 @@ M-x package-install [RET] irony [RET]
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 ```
 
-### Python Mode
+#### Python Mode
 
 I'm using `anaconda-mode` as my python environment. The <a href="https://github.com/jorgenschaefer/elpy">`elpy`</a> is another python environment with `automatic code rules`.
 
 
-```
+```lisp
 M-x package-install [RET] anaconda-mode [RET]
 ```
 
@@ -77,11 +79,11 @@ M-x package-install [RET] anaconda-mode [RET]
 (add-hook 'python-mode-hook' 'anaconda-mode)
 ```
 
-### Web
+#### Web
 
 You definitly need it. 
 
-```
+```lisp
 M-x package-install [RET] web-mode [RET]
 M-x package-install [RET] tide [RET]
 ```
@@ -116,12 +118,12 @@ M-x package-install [RET] tide [RET]
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 ```
 
-### Git
+#### Git
 
 Finally.
 
 
-```
+```lisp
 M-x package-install [RET] magit [RET]
 ```
 

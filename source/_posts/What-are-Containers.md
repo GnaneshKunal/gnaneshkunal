@@ -2,12 +2,10 @@
 title: What are containers!!
 date: "2017-08-24"
 ---
-
-<center>
-    <img src="https://cdn-images-1.medium.com/max/800/1*lu5prM28fxIlbHmjPT8VIg.jpeg" />
-</center>
-
 “Have you ever come across people saying or found yourself saying, “It worked on my machine”? Well, Don’t say you never said *it*, you did.”
+
+
+<!-- more -->
 
 “Of course, everyone does, when I want to transfer my project to a new machine, I usually fall into *this* trap. Don’t you say it too?”
 
@@ -17,6 +15,12 @@ date: "2017-08-24"
 
 “Well again, there’s no such *thing* that works fine on every Machine, but there are ***Containers***.”
 “What are *Containers*, Actually?”
+
+
+<center>
+    <img src="https://cdn-images-1.medium.com/max/800/1*lu5prM28fxIlbHmjPT8VIg.jpeg" />
+</center>
+
 
 “[According to Wiki](https://en.wikipedia.org/wiki/Linux_containers), **Linux container** is a generic term for an implementation of [operating system-level virtualization](https://en.wikipedia.org/wiki/Operating_system-level_virtualization) for the [Linux](https://en.wikipedia.org/wiki/Linux) [operating system](https://en.wikipedia.org/wiki/Operating_system).”
 

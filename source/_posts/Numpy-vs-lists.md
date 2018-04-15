@@ -3,12 +3,14 @@ title: Numpy vs. Python Lists
 date: "2018-02-05"
 ---
 
+While I was learning Machine Learning, I made my mind not to use any of the third-party-libraries (including numpy and Pandas) until I got to know what  happened in the background and feel okay to use libraries.
+<!-- more -->
+
 <div align="center">
     <br />
   <img src="https://www.dropbox.com/s/dxtooh0s29f0v8u/numpy-python.png?raw=1"><br><br>
 </div>
 
-While I was learning Machine Learning, I made my mind not to use any of the third-party-libraries (including numpy and Pandas) until I got to know what  happened in the background and feel okay to use libraries.
 
 It was a bit harder to write everything from scratch. Even the `dot product` must be written, cause python doesn't have that inbuilt.
 
@@ -20,13 +22,11 @@ Stochastic gradient descent is actually scanning through the training examples, 
 
 The cost function measures how well the hypothesis is doing on a single example. 
 
-
 <div align="center">
 
-$cost( \Theta, (x^{(i)}, y^{(i)})) = \dfrac{1}{2}(h_\Theta(x^{(i)}) - y^{i})^2$
+$$cost( \Theta, (x^{(i)}, y^{(i)})) = \dfrac{1}{2}(h_\Theta(x^{(i)}) - y^{i})^2$$
 
-$J_{train}(\Theta)  = \dfrac{1}{m} \sum_{i=1}^{m} cost( \Theta, (x^{(i)}, y^{(i)}))$
-
+$$J_{train}(\Theta)  = \dfrac{1}{m} \sum_{i=1}^{m} cost( \Theta, (x^{(i)}, y^{(i)}))$$
 </div>
 
 ### A dumb Stochastic Gradient Descent Implementation
