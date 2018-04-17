@@ -3,7 +3,7 @@ title: Dumped Spacemacs for Vanilla Emacs
 date: "2018-04-14"
 ---
 
-The start time for <a href="http://spacemacs.org/">Spacemacs</a> used to be pretty high. So I've tried unsetting few layers, but the problem still persists.
+The startup time for <a href="http://spacemacs.org/">Spacemacs</a> used to be pretty high. So I've tried unsetting few layers, but the problem still persists.
 
 I'd planned on dumping Spacemacs but I've started my emacs journey with Spacemacs, So learning the underlying layer of emacs was too difficult to me.
 <!-- more -->
@@ -27,8 +27,17 @@ By copy pasting certain elisp commands on <i>`.emacs`</i> I've found elisp to be
 Add the following in your `.emacs` and your are done.
 
 ```lisp
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
 ```
 
 #### Autocomplete
@@ -131,6 +140,21 @@ M-x package-install [RET] magit [RET]
 ;;.emacs
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
+```
+
+#### Spacemacs-theme
+
+If you love `spacemacs-theme`, then this one's for you
+
+
+```lisp
+M-x package-install [RET] spacemacs-theme [RET]
+```
+
+
+```lisp
+;;.emacs
+(load-theme 'spacemacs-dark t)
 ```
 
 Thinks are a bit fast now though. The startup time has decreased by <b>75%</b>. I'm finally experiencing the same joy I've got while using spacemacs.
