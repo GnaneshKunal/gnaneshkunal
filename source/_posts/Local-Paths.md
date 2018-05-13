@@ -4,6 +4,7 @@ date: "2018-05-13"
 ---
 
 Fedora is my favorite Linux distribution which is sponsored by Red Hat. Fedora 28 is out with a lot of features. Instead of upgrading my fedora using `dnf-plugin-system-upgrade` or the `GNOME Software` way, I'd always like to download the ISO and install it from a USB Flash Drive (cause that returns a pointer to the ISO and I could use it anywhere (ಠ⌣ಠ)).
+<!-- more -->
 
 I have a love/hate relationship is with the Red Hat's `Automatic Partition` which usually leaves with just 50GB for the `Computer` (`/`) and the rest for your `$HOME`. So I usually do `Manual Partition` and give the partitions the right space. But `Automatic Partitions` will save you some time by automatically giving other partitions the right amount of space.
 
