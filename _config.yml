@@ -69,7 +69,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: apollo
+theme: typing
 
 
 # Deployment
@@ -91,12 +91,13 @@ prism_plugin:
 
 math:
   engine: 'katex'
+  mathjax:
+  src: custom_mathjax_source
   katex:
-    css: custom_css_source
-    js: custom_js_source # not used
+    css: https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.css
+    js: https://cdn.jsdelivr.net/npm/katex@0.10.0-alpha/dist/katex.min.js # not used
     config:
       # KaTeX config
 
 asciinema:
 	enable: true
-
