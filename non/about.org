@@ -1,0 +1,11 @@
+#+TITLE:       About
+#+AUTHOR:      Gnanesh Kunal
+#+EMAIL:       gnaneshkunal@outlook.com
+#+DATE:        2017-08-24 Thu
+#+LANGUAGE:    en
+#+OPTIONS:     H:3 num:nil toc:nil \n:nil ::t |:t ^:nil -:nil f:t *:t <:t
+
+Hi, folks, I'm Gnanesh.
+
+I live in India and work as a [[https://www.linkedin.com/in/gnanesh-kunal/][Software Engineer]].
+

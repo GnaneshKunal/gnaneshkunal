@@ -1,0 +1,20 @@
+#+TITLE: Gnanesh's web logs
+
+-   2018-09-07
+  [[file:cpp-recursive-lambdas.org][C++ Lambdas and Recursion]]
+-   2018-06-20
+  [[file:why-scala-implicits.org][Why Scala Implicits]]
+-   2018-05-28
+  [[file:using-js-pkgs-without-types.org][Using JavaScript packages that doesn't have types]]
+-   2018-05-13
+  [[file:local-paths.org][Install packages & libraries on your local paths]]
+-   2018-04-14
+  [[file:dumped-spacemacs.org][Dumped Spacemacs for Vanilla Emacs]]
+-   2018-04-06
+  [[file:applying-transfer-learning-resnet.org][Applying Transfer Learning on ResNet using PyTorch]]
+-   2018-02-07
+  [[file:flashing-nodemcu.org][Flashing your NodeMCU]]
+-   2018-02-05
+  [[file:numpy-vs-lists.org][Numpy vs. Python Lists]]
+-   2017-08-24
+  [[file:what-are-containers.org][What are containers!!]]

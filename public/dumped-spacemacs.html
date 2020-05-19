@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-05-19 Tue 17:26 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dumped Spacemacs for Vanilla Emacs</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Gnanesh Kunal">
+<meta name="description" content="Configuring Vanilla Emacs."
+>
+<meta name="keywords" content="Emacs">
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/stylesheet.css">
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Dumped Spacemacs for Vanilla Emacs</h1>
+</header><p>
+<span class="timestamp-wrapper"><span class="timestamp">&lt;Apr 14, 2018&gt;</span></span>
+</p>
+
+<p>
+The startup time for <a href="http://spacemacs.org/">Spacemacs</a> used to be pretty high. So I've tried
+unsetting few layers, but the problem still persists.
+</p>
+
+<p>
+I'd planned on dumping Spacemacs but I've started my emacs journey with
+Spacemacs, So learning the underlying layer of emacs was too difficult
+to me.
+</p>
+
+<p>
+ I've seen myself deleting Spacemacs, giving a try on <a href="https://www.gnu.org/software/emacs/">Emacs</a> and coming
+back to Spacemacs again.
+</p>
+
+<p>
+Most of the times the common problems I've faced was <i><b>I can't find
+any packages.</b></i>
+</p>
+
+<p>
+I wish I've known about <b><a href="https://melpa.org/">Melpa</a> not showing me newer packages.</b> I've
+gone through the Melpa Installation steps, which was the starting
+point to configure Emacs with my own configuration.
+</p>
+
+<p>
+By copy pasting certain elisp commands on <i>.emacs</i> I've found elisp to
+be a lot simpler and I could clearly understand what's happening in
+the background as well.
+</p>
+
+<div id="outline-container-orge9898a7" class="outline-2">
+<h2 id="autocomplete"><a id="orge9898a7"></a>Autocomplete</h2>
+<div class="outline-text-2" id="text-autocomplete">
+<p>
+Autocomplete is a must. You really need it if you need some cool
+<code>auto-completition</code> for other languages as well.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">M-x package-install [RET] auto-complete [RET]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">.emacs</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Autocomplete</span>
+(ac-config-default)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb85ebea" class="outline-2">
+<h2 id="cc"><a id="orgb85ebea"></a>C/C++</h2>
+<div class="outline-text-2" id="text-cc">
+<p>
+I love clang. And you must love it too. <a href="https://github.com/Sarcasm/irony-mode">Irony</a> provides better editing
+experience for C and C++, and is based on <code>libclang</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">M-x package-install [RET] irony [RET]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">.emacs</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">irony</span>
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5364167" class="outline-2">
+<h2 id="python-mode"><a id="org5364167"></a>Python Mode</h2>
+<div class="outline-text-2" id="text-python-mode">
+<p>
+I'm using <code>anaconda-mode</code> as my python environment. The <a href="https://github.com/jorgenschaefer/elpy">elpy</a> is another python environment with <code>automatic code rules</code>.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">M-x package-install [RET] anaconda-mode [RET]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">.emacs</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Anaconda-mode python</span>
+(add-hook 'python-mode-hook' 'anaconda-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf1f67bc" class="outline-2">
+<h2 id="web"><a id="orgf1f67bc"></a>Web</h2>
+<div class="outline-text-2" id="text-web">
+<p>
+You definitly need it.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">M-x package-install [RET] web-mode [RET]
+M-x package-install [RET] tide [RET]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">.emacs</span>
+<span style="color: #8D8D84;">;;; </span><span style="color: #8D8D84; font-style: italic;">HTML</span>
+
+(<span style="color: #0000FF;">require</span> '<span style="color: #D0372D;">web-mode</span>)
+(add-to-list 'auto-mode-alist '(<span style="color: #008000;">"\\.html?\\'"</span> . web-mode))
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">tide typescript</span>
+(<span style="color: #0000FF;">defun</span> <span style="color: #006699;">setup-tide-mode</span> ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">company is an optional dependency. You have to</span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">install it separately via package-install</span>
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">`M-x package-install [ret] company`</span>
+  (company-mode +1))
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">aligns annotation to the right hand side</span>
+(setq company-tooltip-align-annotations t)
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">formats the buffer before saving</span>
+(add-hook 'before-save-hook 'tide-format-before-save)
+
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">tide typescript</span>
+(add-hook 'typescript-mode-hook #'setup-tide-mode)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org540df70" class="outline-2">
+<h2 id="git"><a id="org540df70"></a>Git</h2>
+<div class="outline-text-2" id="text-git">
+<p>
+Finally.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">M-x package-install [RET] magit [RET]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">.emacs</span>
+<span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">magit</span>
+(global-set-key (kbd <span style="color: #008000;">"C-x g"</span>) 'magit-status)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge2439ec" class="outline-2">
+<h2 id="melpa"><a id="orge2439ec"></a>Melpa</h2>
+<div class="outline-text-2" id="text-melpa">
+<p>
+Add the following in your <code>.emacs</code> and your are done.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">(<span style="color: #0000FF;">require</span> '<span style="color: #D0372D;">package</span>)
+(<span style="color: #0000FF;">let*</span> ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (<span style="color: #0000FF;">if</span> no-ssl <span style="color: #008000;">"http"</span> <span style="color: #008000;">"https"</span>)))
+  <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired</span>
+  (add-to-list 'package-archives (cons <span style="color: #008000;">"melpa"</span> (concat proto <span style="color: #008000;">"://melpa.org/packages/"</span>)) t)
+  <span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)</span>
+  (<span style="color: #0000FF;">when</span> (&lt; emacs-major-version 24)
+    <span style="color: #8D8D84;">;; </span><span style="color: #8D8D84; font-style: italic;">For important compatibility libraries like cl-lib</span>
+    (add-to-list 'package-archives '(<span style="color: #008000;">"gnu"</span> . (concat proto <span style="color: #008000;">"://elpa.gnu.org/packages/"</span>)))))
+(package-initialize)
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43dd4a9" class="outline-2">
+<h2 id="spacemacs-theme"><a id="org43dd4a9"></a>Spacemacs-theme</h2>
+<div class="outline-text-2" id="text-spacemacs-theme">
+<p>
+If you love <code>spacemacs-theme</code>, then this one's for you
+</p>
+
+<div class="org-src-container">
+<pre class="src src-lisp">M-x package-install [RET] spacemacs-theme [RET]
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-lisp"><span style="color: #8D8D84;">;;</span><span style="color: #8D8D84; font-style: italic;">.emacs</span>
+(load-theme 'spacemacs-dark t)
+</pre>
+</div>
+
+<p>
+Thinks are a bit fast now though. The startup time has decreased by
+<b>75%</b>. I'm finally experiencing the same joy I've got while using spacemacs.
+</p>
+
+<p>
+Well, you could mail, play games, listen to songs and do most of the
+things without leaving <a href="https://www.gnu.org/software/emacs/">Emacs</a>.
+</p>
+
+<p>
+Hey, do You know you could even control butterflies without leaving
+emacs?
+</p>
+
+
+
+<figure>
+<img src="img/ds-butterfly.png" alt="ds-butterfly.png">
+
+</figure>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<hr></hr>
+<div class="nav">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="https://github.com/Gnaneshkunal">GitHub</a></li>
+<li><a href="resume.pdf">Resume</a></li>
+</ul>
+</div>
+</div>
+</body>
+</html>
